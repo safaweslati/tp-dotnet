@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model tp3dotnet.Models.Personal_info
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First-Name</th>
+            <th scope="col">Last-Name</th>
+            <th scope="col">Email</th>
+       @*     <th scope="col">Date_Birth</th>*@
+            <th scope="col">Image</th>
+            <th scope="col">Country</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var person in Model.GetAllPerson()){
+        <tr>
+            <th scope="row">@person.id</th>
+            <td>@person.first_name</td>
+            <td>@person.last_name</td>
+            <td>@person.email</td>
+      @*      <td>@person.Date_birth</td>*@
+            <td>@person.image</td>
+            <td>@person.country</td>
+
+        </tr>
+        }
+    </tbody>
+</table>
