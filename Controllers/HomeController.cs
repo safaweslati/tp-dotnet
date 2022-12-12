@@ -18,21 +18,6 @@ namespace tp3dotnet.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-        public void Connection()
-        {
             SQLiteConnection dbCon = new SQLiteConnection("Data Source=C:\\Users\\safaw\\source\\repos\\tp3dotnet\\2022 GL3 .NET Framework TP3 - SQLite database.db");
             dbCon.Open();
             using (dbCon)
@@ -55,6 +40,19 @@ namespace tp3dotnet.Controllers
 
                 }
             }
+            return View();
         }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+     
     }
 }
