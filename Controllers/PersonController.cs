@@ -31,17 +31,14 @@ namespace tp3dotnet.Controllers
         }
 
         [HttpPost]
-        public ActionResult Search(IFormCollection collection)
-        {
-            var first_name = collection["Fisrt name"];
-            var country = collection["Country"];
-           
+        public ActionResult Search(String first_name,String country)
+        { 
             var personal_info = new Personal_info();
             foreach (var person in personal_info.GetAllPerson())
             {
                 if (person.country == country && person.first_name == first_name)
                 {
-                    Redirect("Person/Index/"+person.id.ToString());
+                    Redirect("Person/"+person.id.ToString());
                 }
             }
             ViewBag.notFound = true;
