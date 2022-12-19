@@ -38,7 +38,7 @@ namespace tp3dotnet.Controllers
             {
                 if (person.country == country && person.first_name == first_name)
                 {
-                    Redirect("Person/"+person.id.ToString());
+                   return Redirect("Person/"+person.id.ToString());
                 }
             }
             ViewBag.notFound = true;
